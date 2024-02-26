@@ -29,13 +29,13 @@ btnOver.addEventListener("mouseover", () => {
     colorText.textContent = colorInput.value
 })
 
-copy.addEventListener("click", () => {
+copy.addEventListener("mousedown", () => {
     navigator.clipboard.writeText(colorText.textContent)
     .then(() => {
         copy.style.backgroundColor = colorInput.value
     })  
 })
 
-copy.addEventListener("mouseout", () => {
+copy.addEventListener("mouseup", () => {
     copy.style.backgroundColor = "white"
 })
