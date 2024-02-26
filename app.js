@@ -17,6 +17,10 @@ const yeniRenk = () => {
     return renkKod
 }
 
+window.onload = () =>{
+    btnClick.click()
+}
+
 btnClick.addEventListener("click", () => {
     colorInput.value = yeniRenk() 
     bgDiv.style.backgroundColor = colorInput.value
@@ -24,9 +28,7 @@ btnClick.addEventListener("click", () => {
 })
 
 btnOver.addEventListener("mouseover", () => {
-    colorInput.value = yeniRenk()   
-    bgDiv.style.backgroundColor = colorInput.value
-    colorText.textContent = colorInput.value
+    btnClick.click()
 })
 
 copy.addEventListener("mousedown", () => {
@@ -39,3 +41,15 @@ copy.addEventListener("mousedown", () => {
 copy.addEventListener("mouseup", () => {
     copy.style.backgroundColor = "white"
 })
+
+document.querySelector("body").onkeydown = function (e) {
+    if (e.key === "Enter") {
+        btnClick.click()
+    }
+}
+
+colorInput.oninput = () => {
+    bgDiv.style.backgroundColor = colorInput.value
+    // btnClick.click()
+}
+
